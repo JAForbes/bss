@@ -129,9 +129,8 @@ var vendorValuePrefix = Object.create(null, {});
 var vendorRegex = /^(o|O|ms|MS|Ms|moz|Moz|webkit|Webkit|WebKit)([A-Z])/;
 
 var appendPx = memoize(function (prop) {
-  var el = document.createElement('div');
-
   try {
+    var el = document.createElement('div');
     el.style[prop] = '1px';
     el.style.setProperty(prop, '1px');
     return el.style[prop].slice(-3) === '1px' ? 'px' : ''
